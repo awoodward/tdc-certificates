@@ -23,6 +23,8 @@ describe("TDC Certificate", () => {
 
     it("Should initialize the Certificate contract", async () => {
         expect(await certificateContract.totalSupply()).to.equal(0);
+        // Check ERC721 Interface
+        expect(await certificateContract.supportsInterface(0x80ac58cd)).to.equal(true);
     });
 
     it("Should give away certificates", async () => {
